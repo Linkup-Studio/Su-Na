@@ -32,6 +32,15 @@ h3 {
     text-decoration: underline;
 }
 
+.text-highlight {
+    display: inline-block;
+    font-family: var(--font-jp-serif);
+    font-size: 1.25rem;
+    color: var(--color-text);
+    margin: 10px 0;
+    letter-spacing: 0.1em;
+}
+
 /* Layout Utilities */
 .container {
     max-width: var(--width-container);
