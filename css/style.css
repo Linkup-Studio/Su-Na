@@ -266,7 +266,7 @@ h3 {
 .concept__body {
     max-width: 600px;
     margin: 0 auto;
-    text-align: center;
+    text-align: left;
     line-height: 2.2;
 }
 
