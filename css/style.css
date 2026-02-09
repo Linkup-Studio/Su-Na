@@ -81,9 +81,9 @@ h3 {
 }
 
 .btn--primary {
-    background-color: var(--color-text);
-    color: var(--color-bg);
-    border-color: var(--color-text);
+    background-color: var(--color-accent);
+    color: #000;
+    border-color: var(--color-accent);
 }
 
 .btn--primary:hover {
@@ -102,15 +102,15 @@ h3 {
     color: var(--color-bg);
 }
 
-.btn--line {
-    background-color: #06c755;
-    color: #fff;
-    border-color: #06c755;
+.btn--secondary {
+    background-color: transparent;
+    color: var(--color-text);
+    border-color: var(--color-text);
 }
 
-.btn--line:hover {
-    background-color: #05b34c;
-    border-color: #05b34c;
+.btn--secondary:hover {
+    background-color: var(--color-text);
+    color: var(--color-bg);
 }
 
 .btn--large {
