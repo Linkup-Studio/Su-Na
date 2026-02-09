@@ -64,6 +64,10 @@ h3 {
     font-weight: 500;
 }
 
+.sp-br {
+    display: none;
+}
+
 /* Buttons */
 .btn {
     display: inline-block;
@@ -504,6 +508,10 @@ details[open] .qa__q::after {
 
     .header__inner {
         padding: 15px 20px;
+    }
+
+    .sp-br {
+        display: block;
     }
 
     /* Mobile Navigation */
