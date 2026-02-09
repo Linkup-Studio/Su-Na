@@ -41,6 +41,8 @@ h3 {
 
 .section {
     padding: 80px 0;
+    scroll-margin-top: 70px;
+    /* Fix for sticky header overlap */
 }
 
 .section__header {
@@ -157,6 +159,41 @@ h3 {
 
 .header__nav a:not(.btn):hover {
     color: var(--color-text);
+}
+
+/* Mobile Menu Button (Hidden on Desktop) */
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 200;
+}
+
+.mobile-menu-btn span {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background-color: var(--color-text);
+    margin: 5px 0;
+    transition: all 0.3s;
+}
+
+/* Mobile Menu Open State */
+.header.nav-open .mobile-menu-btn span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.header.nav-open .mobile-menu-btn span:nth-child(2) {
+    opacity: 0;
+}
+
+.header.nav-open .mobile-menu-btn span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+.header.nav-open .header__nav {
+    transform: translateX(0);
 }
 
 /* Hero Section */
@@ -461,7 +498,33 @@ details[open] .qa__q::after {
 @media (max-width: 768px) {
     :root {
         --width-container: 100%;
-        --spacing-container: 15px;
+        --spacing-container: 20px;
+        /* Increased padding */
+    }
+
+    .header__inner {
+        padding: 15px 20px;
+    }
+
+    /* Mobile Navigation */
+    .mobile-menu-btn {
+        display: block;
+    }
+
+    .header__nav {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(13, 13, 13, 0.98);
+        padding-top: 80px;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+        gap: 30px;
+        font-size: 1.2rem;
     }
 
     .hero__title {
@@ -484,11 +547,6 @@ details[open] .qa__q::after {
     .product__card:nth-child(even) {
         direction: ltr;
         /* Reset direction on mobile */
-    }
-
-    .header__nav {
-        display: none;
-        /* Simple MVP: hide nav on mobile or implement hamburger later */
     }
 
     .cta__buttons {
